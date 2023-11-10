@@ -1,25 +1,19 @@
 Problem Statement:
-
 Problem: Inefficient File Reading and Writing in Python
 
 Articulation:
-
 Reading and writing large files in Python using traditional file I/O operations can be inefficient, especially when dealing with massive datasets or log files. The standard open() and read() or write() operations may lead to high memory usage and slow performance, making it challenging to process or manipulate large files efficiently.
 
 Proposed Solution:
-
 Solution: Utilize Buffered I/O and Context Managers
 
 Articulation:
-
 To address the inefficiency of file reading and writing in Python, a recommended solution is to use buffered I/O and context managers. These techniques optimize file operations, reduce memory overhead, and ensure that resources are managed properly, even in the presence of exceptions.
 
 Implementation Steps:
-
 Use Context Managers (with statement): Employ the with statement along with the open() function to ensure that files are properly closed after operations. This is particularly crucial when dealing with large files to prevent resource leaks.
 
 python
-Copy code
 # Inefficient file reading without context manager
 file = open('large_file.txt', 'r')
 data = file.read()
@@ -52,7 +46,6 @@ Example Usage:
 Consider reading and writing a large CSV file:
 
 python
-Copy code
 # Inefficient file reading and writing
 data = open('large_file.csv', 'r').read()
 output_file = open('output.csv', 'w')
